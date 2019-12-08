@@ -17,52 +17,56 @@ Can be an integer to determine the exact padding."
   "A dark theme inspired by VS code's Moonlight"
 
   ;; name        default   256       16
-  ((bg         '("#212337" nil       nil))
-   (bg-alt     '("#1e2132" nil       nil))
-   (base0      '("#161a2a" "black"   "black"))
-   (base1      '("#191a2a" "#262626" "brightblack"))
-   (base2      '("#1f2133" "#303030" "brightblack"))
-   (base3      '("#292e46" "#3a3a3a" "brightblack"))
-   (base4      '("#2c314b" "#444444" "brightblack"))
-   (base5      '("#383e5c" "#585858" "brightblack"))
-   (base6      '("#7e8eda" "#626262" "brightblack"))
-   (base7      '("#9da5d7" "#767676" "brightblack"))
-   (base8      '("#afbeee" "#a8a8a8" "white"))
-   (fg         '("#e4f3fa" "#e4e4e4" "brightwhite"))
-   (fg-alt     '("#dcebff" "#bcbcbc" "white"))
+  ((bg         '("#212337" "#212337" "black"))
+   (bg-alt     '("#1e2132" "#1e2132" nil))
+   (base0      '("#161a2a" "#161a2a"   "black"))
+   (base1      '("#191a2a" "#191a2a" "brightblack"))
+   (base2      '("#1f2133" "#1f2133" "brightblack"))
+   (base3      '("#292e46" "#292e46" "brightblack"))
+   (base4      '("#2c314b" "#2c314b" "brightblack"))
+   (base5      '("#383e5c" "#383e5c" "brightblack"))
+   (base6      '("#7c85b3" "#7c85b3" "brightblack"))
+   (base7      '("#9da5d7" "#9da5d7" "brightblack"))
+   (base8      '("#afbeee" "#afbeee" "white"))
+   (comments   '("#7e8eda" "#7e8eda" "brightblack"))
+   (fg         '("#cddaf3" "#cddaf3" "brightwhite"))
+   (fg-alt     '("#b8c7fc" "#b8c7fc" "white"))
 
    (grey base5)
 
-   (red         '("#ff5370" "#ff5f5f" "red"))
-   (orange      '("#ff9668" "#ff875f" "brightred"))
-   (green       '("#c7f59b" "#d7ff87" "green"))
-   (teal        '("#7af8ca" "#87ffd7" "brightgreen"))
-   (teal2       '("#7fdaff" "#87ffd7" "brightgreen"))
-   (yellow      '("#ffbd76" "#ffaf87" "brightyellow"))
-   (blue        '("#70b0ff" "#5fafff" "brightblue"))
-   (dark-blue   '("#74a0f1" "#5fafff" "brightblue"))
-   (magenta     '("#baacff" "#afafff" "brightmagenta"))
-   (violet      '("#f989d3" "#ff87d7" "magenta"))
-   (pink        '("#f3c1ff" "#ff87d7" "magenta"))
-   (cyan        '("#34d3fb" "#5fd7ff" "brightcyan"))
-   (cyan2       '("#89ddff" "#5fd7ff" "brightcyan"))
-   (dark-cyan   '("#a6eefb" "#afffff" "cyan"))
+   (dark-red    '("#ff5370" "#ff5370" "red"))
+   (red         '("#fc7b7b" "#fc7b7b" "red"))
+   (light-red   '("#ff757f" "#ff757f" "brightred"))
+   (orange      '("#ff995e" "#ff995e" "brightred"))
+   (green       '("#c7f59b" "#c7f59b" "green"))
+   (dark-teal   '("#56d7cf" "#56d7cf" "green"))
+   (teal        '("#7af8ca" "#7af8ca" "brightgreen"))
+   (yellow      '("#ffc777" "#ffc777" "brightyellow"))
+   (blue        '("#70b0ff" "#70b0ff" "brightblue"))
+   (dark-blue   '("#74a0f1" "#74a0f1" "brightblue"))
+   (light-blue  '("#82AAFF" "#82AAFF" "blue"))
+   (magenta     '("#baacff" "#baacff" "brightmagenta"))
+   (violet      '("#f989d3" "#f989d3" "magenta"))
+   (light-pink  '("#f7a4ec" "#f7a4ec" "magenta"))
+   (pink        '("#f3c1ff" "#f3c1ff" "magenta"))
+   (cyan        '("#7fdaff" "#7fdaff" "brightcyan"))
+   (dark-cyan   '("#34d3fb" "#34d3fb" "cyan"))
 
    ;; face categories -- required for all themes
-   (highlight      magenta)
+   (highlight      dark-blue)
    (vertical-bar   base0)
    (selection      dark-blue)
    (builtin        blue)
-   (comments       base6)
+   (comments       "#7e8eda")
    (doc-comments   (doom-lighten base5 0.25))
    (constants      orange)
    (functions      blue)
    (keywords       magenta)
    (methods        blue)
-   (operators      cyan2)
-   (type           magenta)
-   (strings        teal)
-   (variables      teal2)
+   (operators      cyan)
+   (type           yellow)
+   (strings        green)
+   (variables      yellow)
    (numbers        orange)
    (region         base4)
    (error          red)
@@ -83,7 +87,7 @@ Can be an integer to determine the exact padding."
       (if (integerp doom-moonlight-padded-modeline) doom-moonlight-padded-modeline 4))))
 
   ;; --- base faces ------------------------
-  (((lazy-highlight &override) :background base4 :foreground fg :distant-foreground fg :bold bold)
+  (((lazy-highlight &override) :background base4 :foreground fg :distant-foreground fg)
    (doom-modeline-buffer-path       :foreground green :weight 'bold)
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
 
@@ -129,10 +133,10 @@ Can be an integer to determine the exact padding."
    (Man-underline :inherit 'underline :foreground blue)
 
    ;; org-mode
-   ((outline-1 &override) :foreground cyan)
-   ((outline-2 &override) :foreground green)
-   ((outline-3 &override) :foreground teal)
-   ((outline-4 &override) :foreground pink)
+   ((outline-1 &override) :foreground light-blue)
+   ((outline-2 &override) :foreground dark-cyan)
+   ((outline-3 &override) :foreground light-red)
+   ((outline-4 &override) :foreground light-pink)
    ((outline-5 &override) :foreground magenta)
    ((outline-6 &override) :foreground red)
    ((outline-7 &override) :foreground violet)
@@ -152,6 +156,8 @@ Can be an integer to determine the exact padding."
    (dired-k-ignored :foreground cyan)
    (dired-k-added    :foreground vc-added)
 
+   ;; magit
+   (magit-filename :foreground teal)
 
    ;; markdown-mode
    (markdown-header-face           :inherit 'bold :foreground blue)
@@ -161,8 +167,8 @@ Can be an integer to determine the exact padding."
 
    ;; js2-mode
    (js2-jsdoc-tag              :foreground magenta)
-   (js2-object-property        :foreground dark-cyan)
-   (js2-object-property-access :foreground cyan)
+   (js2-object-property        :foreground dark-teal)
+   (js2-object-property-access :foreground fg-alt)
    (js2-function-param         :foreground pink)
    (js2-jsdoc-type             :foreground base8)
    (js2-jsdoc-value            :foreground cyan)
@@ -182,6 +188,9 @@ Can be an integer to determine the exact padding."
    (rjsx-tag :foreground violet)
    (rjsx-attr :foreground yellow :slant 'italic :weight 'medium)
 
+
+   ;; treemacs
+   ;;
    ;; tooltip
    (tooltip              :background (doom-darken bg-alt 0.2) :foreground fg)))
 
