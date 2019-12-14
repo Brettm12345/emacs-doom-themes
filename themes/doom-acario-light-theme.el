@@ -91,7 +91,7 @@ determine the exact padding."
    (vc-deleted     red)
 
 ;;;; custom categories
-   (hidden bg)
+   (hidden     `(,(car bg) "black" "black"))
    (-modeline-dark doom-acario-light-brighter-modeline)
    (-modeline-bright -modeline-dark)
    (-modeline-pad
