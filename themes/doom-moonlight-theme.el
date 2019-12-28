@@ -165,6 +165,10 @@ Can be an integer to determine the exact padding."
    (markdown-metadata-key-face     :foreground magenta :inherit 'italic)
    (markdown-list-face             :foreground red)
 
+   ;; nix-mode
+   (nix-attribute-face :foreground magenta)
+   (nix-builtin-face :foreground dark-teal)
+
    ;; js2-mode
    (js2-jsdoc-tag              :foreground magenta)
    (js2-object-property        :foreground dark-teal)
